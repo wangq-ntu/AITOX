@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Query System</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .section { margin-bottom: 20px; }
+        #output { border: 1px solid #ccc; padding: 10px; min-height: 100px; }
+        h1 { text-align: center; }
+        .authors { text-align: center; margin-bottom: 20px; font-style: italic; }
+        .contact { text-align: center; margin-top: 40px; font-size: 0.9em; color: #666; }
+    </style>
+</head>
+<body>
+    <h1>PDF Query System</h1>
+    <div class="authors">
+        <p>Authors: John Doe, Jane Smith</p>
+    </div>
+    <div class="section">
+        <h2>Upload PDF</h2>
+        <form id="uploadForm">
+            <input type="file" name="file" accept=".pdf">
+            <button type="submit">Upload PDF</button>
+        </form>
+        <div id="uploadStatus"></div>
+    </div>
+    <div class="section">
+        <h2>Train Model</h2>
+        <button id="trainButton" disabled>Train</button>
+        <div id="trainStatus"></div>
+    </div>
+    <div class="section">
+        <h2>Query PDF</h2>
+        <form id="queryForm">
+            <input type="text" name="query" placeholder="Enter your question">
+            <button type="submit">Ask Question</button>
+        </form>
+    </div>
+    <div class="section">
+        <h2>Output</h2>
+        <div id="output"></div>
+    </div>
+
+    <div class="contact">
+        <h1>Contact:</h1>
+        <p>Institute of High Performance Computing</p>
+        <p>1 Fusionopolis Way</p>
+        <p>#16-16 Connexis (North Tower)</p>
+        <p>Singapore 138632</p>
+    </div>
+
+    <script>
+        // JavaScript code remains unchanged
+    </script>
+</body>
+</html>

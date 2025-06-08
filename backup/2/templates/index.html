@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Food Safety Toxicity Prediction Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+    <style>
+      body { padding: 40px; background-color: #f8f9fa; }
+      .container { max-width: 800px; }
+      .card { box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px; margin-bottom: 20px; }
+      .logos { margin-top: 50px; }
+      .section-title { margin-top: 20px; margin-bottom: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1 class="mb-4 text-center">Food Safety Toxicity Prediction</h1>
+        
+        <!-- First Input Section -->
+        <h4 class="section-title">Input Data</h4>
+        <form action="{{ url_for('initial_predict') }}" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="file" class="form-label">Upload Input Data File (XLSX/CSV)</label>
+            <input class="form-control" type="file" id="file" name="file" accept=".xlsx,.csv" required>
+            <small class="form-text text-muted">File must include 'Drugs', 'gene expression data', and feature columns.</small>
+          </div>
+
+          <div class="mb-3">
+            <label for="model_choice" class="form-label">Choose Model</label>
+            <select class="form-select" id="model_choice" name="model_choice" required>
+              {% for m in models %}
+                <option value="{{ m }}">{{ m }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 mb-4">Run Prediction</button>
+        </form>
+
+        <!-- Second Input Section -->
+        <h4 class="section-title">True Values</h4>
+        <form action="{{ url_for('final_predict') }}" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="true_file" class="form-label">Upload True Values File (XLSX/CSV)</label>
+            <input class="form-control" type="file" id="true_file" name="true_file" accept=".xlsx,.csv" required>
+            <small class="form-text text-muted">File must include 'Toxicity' column.</small>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Run Final Prediction</button>
+        </form>
+      </div>
+
+      <!-- Logos at the bottom -->
+      <div class="logos text-center">
+        <img src="{{ url_for('static', filename='images/sfalogo.png') }}"
+             alt="Singapore Food Agency" class="mx-3" style="height:80px;">
+        <img src="{{ url_for('static', filename='images/david.png') }}"
+             alt="NUS NanoBio" class="mx-3" style="height:80px;">
+        <img src="{{ url_for('static', filename='images/ihpc.png') }}"
+             alt="IHPC" class="mx-3" style="height:80px;">
+      </div>
+    </div>
+  </body>
+</html>

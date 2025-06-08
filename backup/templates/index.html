@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Food Safety Toxicity Prediction Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+  </head>
+  <body class="p-5">
+
+    <h1 class="mb-4">Food Safety Toxicity Prediction</h1>
+
+    <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="file" class="form-label">Select CSV file</label>
+        <input class="form-control" type="file" id="file" name="file" accept=".csv" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="model_choice" class="form-label">Choose model</label>
+        <select class="form-select" id="model_choice" name="model_choice" required>
+          {% for m in models %}
+            <option value="{{ m }}">{{ m }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Run Prediction</button>
+    </form>
+
+    <!-- Logos at the bottom -->
+    <div class="mt-5 text-center">
+      <img src="{{ url_for('static', filename='images/sfalogo.png') }}"
+           alt="Singapore Food Agency" class="mx-3" style="height:80px;">
+      <img src="{{ url_for('static', filename='images/david.png') }}"
+           alt="NUS NanoBio" class="mx-3" style="height:80px;">
+      <img src="{{ url_for('static', filename='images/ihpc.png') }}"
+           alt="IHPC" class="mx-3" style="height:80px;">
+
+    </div>
+
+  </body>
+</html>
