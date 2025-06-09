@@ -57,7 +57,6 @@ fonttools==4.53.1
 fqdn==1.5.1
 frozenlist==1.4.1
 fsspec==2024.6.1
-future @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/future-0.18.2-py3-none-any.whl
 gast==0.6.0
 get-annotations==0.1.2
 ghostscript==0.7
