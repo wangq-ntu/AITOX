@@ -138,7 +138,6 @@ networkx==3.2.1
 notebook==7.2.1
 notebook_shim==0.2.4
 numba==0.60.0
-numpy==2.0.2
 omegaconf==2.3.0
 openai==1.52.2
 openpyxl==3.1.5
