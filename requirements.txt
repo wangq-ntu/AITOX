@@ -114,7 +114,6 @@ legacy-api-wrap==1.4.1
 libclang==18.1.1
 lightning-utilities==0.11.3.post0
 llvmlite==0.43.0
-macholib @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/macholib-1.15.2-py2.py3-none-any.whl
 Markdown==3.6
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
@@ -204,7 +203,6 @@ Send2Trash==1.8.3
 session-info==1.0.0
 setproctitle==1.3.5
 shap==0.46.0
-six @ file:///AppleInternal/Library/BuildRoots/39d9dc1a-2111-11f0-be06-226177e5bb69/Library/Caches/com.apple.xbs/Sources/python3/six-1.15.0-py2.py3-none-any.whl
 skorch==1.0.0
 slicer==0.0.8
 sniffio==1.3.1
